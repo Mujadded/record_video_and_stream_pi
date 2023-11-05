@@ -17,10 +17,10 @@ def start(callback_function):
   video_name= f"./captured_video/{datetime.today().strftime('%Y%m%d%H%M%S')}.avi"
 
   # FPS for recording video. Setting 6 as the real fps is 6 to 7
-  fps = 30.0
+  fps = 10.0
   # Video Recorder instance
   out = cv2.VideoWriter(video_name,fourcc, fps, (_FRAME_WEIGHT, _FRAME_HEIGHT))
-  
+    
   while(True):
     # Grab frame from video stream
     image = picam2.capture_array()
