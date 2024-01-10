@@ -1,3 +1,4 @@
+from time import sleep
 import cv2
 from flask import Flask, render_template, Response
 import threading
@@ -41,7 +42,7 @@ def gen():
             if not flag:
                 continue
         yield(b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + bytearray(encodedImage) + b'\r\n')
-
+        
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
